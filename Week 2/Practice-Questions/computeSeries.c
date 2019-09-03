@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 int main()
 {
     int n, denominator = 1;
@@ -19,4 +19,3 @@ int main()
     printf("Result = %.2f\n", result);
     return 0;
 }
-*/
