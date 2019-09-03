@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 #define INIT_VALUE 999
 int extOddDigits1(int num);
 void extOddDigits2(int num, int *result);
@@ -50,4 +50,3 @@ void extOddDigits2(int num, int *result)
         *result = -1;
     }
 }
-*/
