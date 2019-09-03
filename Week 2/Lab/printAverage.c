@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 int main()
 {
     int total, count, lines, input;
@@ -23,4 +23,4 @@ int main()
 
     return 0;
 }
-*/
+
