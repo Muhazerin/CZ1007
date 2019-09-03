@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 int divide1(int m, int n, int *r);
 void divide2(int m, int n, int *q, int *r);
 int main()
@@ -49,4 +49,3 @@ void divide2(int m, int n, int *q, int *r)
         }
     }
 }
-*/
