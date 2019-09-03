@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 int main()
 {
     int hours;
@@ -34,4 +34,4 @@ int main()
     printf("Net pay = %.2f\n", netPay);
     return 0;
 }
-*/
+
