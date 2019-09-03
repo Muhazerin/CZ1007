@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 int main()
 {
     double current, resistance, power;
@@ -13,4 +13,3 @@ int main()
 
     return 0;
 }
-*/
