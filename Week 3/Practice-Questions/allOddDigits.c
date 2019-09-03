@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 int allOddDigits1(int num);
 void allOddDigits2(int num, int *result);
 int main()
@@ -46,4 +46,3 @@ void allOddDigits2(int num, int *result)
     }
     *result = 1;
 }
-*/
