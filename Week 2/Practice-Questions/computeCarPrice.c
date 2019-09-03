@@ -1,4 +1,4 @@
-/*include <stdio.h>
+include <stdio.h>
 int main()
 {
     int list, coe = 0, cat;
@@ -28,4 +28,3 @@ int main()
     printf("Total price is $%.2lf\n", total);
     return 0;
 }
-*/
