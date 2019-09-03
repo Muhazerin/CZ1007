@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 int main()
 {
     char ch;
@@ -16,4 +16,4 @@ int main()
 
     return 0;
 }
-*/
+
