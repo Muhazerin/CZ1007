@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 int main()
 {
     float fahrenheit, celsius;
@@ -11,4 +11,3 @@ int main()
     printf("Converted degree in C: %.2f\n", celsius);
     return 0;
 }
-*/
