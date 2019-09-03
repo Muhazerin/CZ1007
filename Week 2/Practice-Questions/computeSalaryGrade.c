@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 int main()
 {
     int salary, merit;
@@ -32,4 +32,3 @@ int main()
 
     return 0;
 }
-*/
