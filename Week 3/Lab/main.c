@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 
 int numDigits1(int num);
 int digitPos1(int num, int digit);
@@ -152,4 +152,3 @@ void square2(int num, int *result)
         num -= 1;
     }
 }
-*/
