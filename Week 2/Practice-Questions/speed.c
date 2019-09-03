@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 int main()
 {
     int distance, time;
@@ -14,4 +14,3 @@ int main()
 
     return 0;
 }
-*/
