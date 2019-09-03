@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 int countOddDigits1(int num);
 void countOddDigits2(int num, int *result);
 int main()
@@ -40,4 +40,3 @@ void countOddDigits2(int num, int *result)
         num /= 10;
     }
 }
-*/
