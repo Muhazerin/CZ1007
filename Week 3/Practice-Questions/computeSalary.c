@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 void readInput(int *id, int *noOfHours, int *payRate);
 void printOutputs(int id, double grossPay);
 double computeSalary1(int noOfHours, int payRate);
@@ -59,4 +59,3 @@ void computeSalary2(int noOfHours, int payRate, double *grossPay)
     *grossPay = 0;
     (noOfHours > 160) ? (*grossPay = (double)160 * (double)payRate  + ((double)noOfHours - 160) * (1.5 * (double)payRate)) : (*grossPay = (double)noOfHours * (double)payRate);
 }
-*/
