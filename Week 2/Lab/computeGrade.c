@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 int main()
 {
     int studentNumber = 0, mark;
@@ -30,4 +30,4 @@ int main()
     }
     return 0;
 }
-*/
+
