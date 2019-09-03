@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 int digitValue1(int num, int k);
 void digitValue2(int num, int k, int *result);
 int main()
@@ -49,4 +49,3 @@ void digitValue2(int num, int k, int *result)
         num /= 10;
     }
 }
-*/
