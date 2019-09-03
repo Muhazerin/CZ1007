@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 int perfectProd1(int num);
 void perfectProd2(int num, int *prod);
 int main()
@@ -55,4 +55,3 @@ void perfectProd2(int num, int *prod)
         }
     }
 }
-*/
