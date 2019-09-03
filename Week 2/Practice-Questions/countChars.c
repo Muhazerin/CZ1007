@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 int main()
 {
     int ccount = 0, dcount = 0;
@@ -18,4 +18,3 @@ int main()
     printf("The number of letters: %d\n", ccount);
     return 0;
 }
-*/
