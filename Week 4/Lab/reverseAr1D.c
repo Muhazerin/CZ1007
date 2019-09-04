@@ -52,10 +52,12 @@ void reverseAr1D(int ar[ ], int size)
     int temp, i = 0, halfSize = size / 2;
     int *arPtr = ar;
 
-    while (i < halfSize) {
-        temp = *(arPtr+i);
-        *(arPtr+i) = *(arPtr+size-i-1);
-        *(arPtr+size-i-1) = temp;
-        i++;
+    if (size > 0) {
+        while (i < halfSize) {
+            temp = *(arPtr+i);
+            *(arPtr+i) = *(arPtr+size-i-1);
+            *(arPtr+size-i-1) = temp;
+            i++;
+        }
     }
 }
