@@ -19,7 +19,7 @@ int main()
 }
 void compress2D(int data[SIZE][SIZE], int rowSize, int colSize)
 {
-    int tempArray[SIZE][SIZE], row, col, temp10Freq[SIZE][2], tempDigit, tempFreqIndex, tempArrayRow, tempArrayCol[rowSize];
+    int tempArray[SIZE][SIZE], row, col, temp10Freq[SIZE][2], tempDigit, tempFreqIndex, tempArrayRow, tempArrayCol[rowSize], i;
 
     if (rowSize != colSize || rowSize < 1) {
         return;
@@ -55,22 +55,21 @@ void compress2D(int data[SIZE][SIZE], int rowSize, int colSize)
 
         // need to save the frequency into a new tempArray row
         col = 0;
-        for(row = 0; row <= tempFreqIndex; row++) {
-            tempArray[tempArrayRow][col++] = temp10Freq[row][0];
-            tempArray[tempArrayRow][col++] = temp10Freq[row][1];
+        for(i = 0; i <= tempFreqIndex; i++) {
+            tempArray[tempArrayRow][col++] = temp10Freq[i][0];
+            tempArray[tempArrayRow][col++] = temp10Freq[i][1];
         }
         tempArrayCol[tempArrayRow] = col;
         tempArrayRow++;
 
         // need to clear temp10Freq array
-        for(row = 0; row < SIZE; row++) {
-            temp10Freq[row][0] = -1;
-            temp10Freq[row][1] = -1;
+        for(i = 0; i < SIZE; i++) {
+            temp10Freq[i][0] = -1;
+            temp10Freq[i][1] = -1;
         }
     }
 
-    printf("tempArrayRow: %d\n", tempArrayRow);
-    for (row = 0; row <= tempArrayRow; row++) {
+    for (row = 0; row < tempArrayRow; row++) {
         for (col = 0; col < tempArrayCol[row]; col++) {
             printf("%d ", tempArray[row][col]);
         }
