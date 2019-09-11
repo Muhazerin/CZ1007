@@ -22,7 +22,7 @@ char *stringncpy(char *s1, char *s2, int n)
             strTooShort = 1;
             break;
         }
-    *(s1+i) = *(s2+i);
+        *(s1+i) = *(s2+i);
     }
     if(strTooShort) {
         while (i < n) {
