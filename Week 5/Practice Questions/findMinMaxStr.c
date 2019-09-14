@@ -20,31 +20,19 @@ int main()
 }
 void findMinMaxStr(char word[][40], char *first, char *last, int size)
 {
-    int i;
-    char *firstTemp, *lastTemp;
+    int i = 0;
+    char *tempFirst, *tempLast;
+    tempFirst = tempLast = word[0];
 
-    for(i = 0; i < size; i++) {
-        if (i == 0) {
-            firstTemp = lastTemp = word[i];
+    while (i < size) {
+        if(strcmp(word[i], tempFirst) < 0) {
+            tempFirst = word[i];
         }
-        else {
-            if(strcmp(word[i], firstTemp) < 1) {
-                if(strcmp(firstTemp, lastTemp) > 1) {
-                    lastTemp = firstTemp;
-                }
-                firstTemp = word[i];
-            }
-            else if (strcmp(word[i], lastTemp) > 1){
-                lastTemp = word[i];
-            }
+        if(strcmp(word[i], tempLast) > 0) {
+            tempLast = word[i];
         }
+        i++;
     }
-    while(*lastTemp != '\0') {
-        *(last++) = *(lastTemp++);
-    }
-    while(*firstTemp != '\0') {
-        *(first++) = *(firstTemp++);
-    }
-    *first = '\0';
-    *last = '\0';
+    strcpy(first, tempFirst);
+    strcpy(last, tempLast);
 }
