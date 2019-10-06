@@ -4,7 +4,7 @@ void divide2(int m, int n, int *q, int *r);
 int main()
 {
     int m, n, q, r;
-
+    
     printf("Enter two numbers (m and n): \n");
     scanf("%d %d", &m, &n);
     q = divide1(m, n, &r);
@@ -18,34 +18,24 @@ int divide1(int m, int n, int *r)
     int q = 0;
     *r = 0;
 
-    if (m < 1 || n < 1) {
-        return q;
-    }
-
-    while (m > 0) {
-        q++;
-        m -= n;
-        if (m < 0) {
-            *r = m + n;
-            q--;
+    if (m > 0 && n > 0) {
+        while ((m - n) >= 0) {
+            q++;
+            m -= n;
         }
+        *r = m;
     }
     return q;
 }
 void divide2(int m, int n, int *q, int *r)
 {
-    *q = 0, *r = 0;
+    *q = *r = 0;
 
-    if (m < 1 || n < 1) {
-        return;
-    }
-
-    while (m > 0) {
-        (*q)++;
-        m -= n;
-        if (m < 0) {
-            *r = m + n;
-            (*q)--;
+    if (m > 0 && n > 0) {
+        while ((m - n) >= 0) {
+            (*q)++;
+            m -= n;
         }
+        *r = m;
     }
 }
