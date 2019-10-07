@@ -24,17 +24,17 @@ int main()
 }
 int symmetry2D(int M[][SIZE], int rowSize, int colSize)
 {
-    int row, col;
+    int i, j;
 
-    if (rowSize != colSize || rowSize < 1) {
-        return -1;
-    }
-    for(row = 0; row < rowSize; row++) {
-        for (col = 0; col < colSize; col++) {
-            if (M[row][col] != M[col][row]) {
-                return 0;
+    if (rowSize == colSize) {
+        for (i = 0; i < rowSize; i++) {
+            for (j = i+1; j < rowSize; j++) {
+                if (M[i][j] != M[j][i]) {
+                    return 0;
+                }
             }
         }
+        return 1;
     }
-    return 1;
+    return -1;
 }
