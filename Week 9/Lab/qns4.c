@@ -41,8 +41,6 @@ int main()
 				printf("Cannot allocate memory\n");
 				return 1;
 			}
-			head->item = n;
-			head->next = NULL;
 			p = head;
 		}
 		else {
@@ -52,9 +50,9 @@ int main()
 				return 1;
 			}
 			p = p->next;
-			p->item = n;
-			p->next = NULL;
 		}
+		p->item = n;
+		p->next = NULL;
 
 		scanf("%d", &n);
 	}
