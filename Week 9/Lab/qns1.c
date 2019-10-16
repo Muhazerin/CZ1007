@@ -14,7 +14,7 @@ void removes(char *s, int n);
 int main ()
 {
 	int n;
-    char *s;
+    	char *s;
 	int choice;
 
 
@@ -23,7 +23,7 @@ int main ()
 
 	s=(char *)malloc((n+1)*sizeof(char));
 
-    if (s==NULL)
+    	if (s==NULL)
 	{
 		printf("can't allocate the memory!");
 		return 1;
@@ -46,43 +46,34 @@ int main ()
 			removes(s,n);
 	}while (choice!=3);
 
-    free(s);
-    return 0;
+    	free(s);
+    	return 0;
 }
 
 //////////////////////////////////////////
 void removes(char *s, int n)
 {
-	// write your code here
-    char *t;
-    int i;
-    t = (char *)malloc(n * sizeof(char));
-
-    for (i = 0; i < n-1; i++) {
-        *(t+i) = *(s+i);
-    }
-    *(t+i) = '\0';
-    printf("Resulting string: %s\n", t);
-
-    free(t);
+	int i;
+	// shift left + 1 character to the left and continue movint to the right
+	for (i=0; i < n; i++) {
+		*(s+i) = *(s+i+1);
+	}
+	printf("Resulting string: %s", s);
 }
 
 //////////////////////////////////////////
 void insert(char *s, int n)
 {
-	// write your code here
 	int i;
-	char *t;
-
-	t = (char *)malloc((n+1) * sizeof(char));
-
-	printf("What is the character you want to insert: ");
-	scanf("\n%c", t);
-	for (i = 1; i < n; i++) {
-        *(t+i) = *(s+i-1);
+	// shift the right most character to the right and continue moving to the left
+	for (i=n-1;i>0;i--) {
+		*(s+i)=*(s+i-1);
 	}
-	*(t+i) = '\0';
-	printf("Resulting string: %s\n", t);
-
-	free(t);
+	*(s+n) = '\0';
+	
+	// insert the character to the first slot
+	printf("What is the character you want to insert: ");
+	scanf("\n%c", s);
+	
+	printf("Resulting string: %s\n", s);
 }
