@@ -87,7 +87,9 @@ int main()
 
 	// Question 4
 	//rewrite the free up using temporary pointer temp.
-	temp = head;
+	
+	// remove from the back
+	/*temp = head;
 	while (temp != NULL && p != head) {
 		temp = head;
 		if (p == head) {    // last = first == only 1 item in linked list
@@ -102,7 +104,16 @@ int main()
 			temp->next = NULL;
 			p = temp;
 		}
+	}*/
+	
+	// remove from the front
+	p = head;
+	while (p != NULL) {
+		temp=p->next;
+		free(p);
+		p = temp;
 	}
+	p = temp = head = NULL;
 
 /////////////////////////////////////////////////////////
 	return 0;
