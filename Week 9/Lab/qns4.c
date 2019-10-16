@@ -31,42 +31,41 @@ int main()
 
  ////////////////////////////////////////////////////////////////////
 
- // Question 2
- //Write your program code here
-    scanf("%d", &n);
-    while (n != -1) {
-        if (head == NULL) {
-            head = malloc(sizeof(ListNode));
-            if (head == NULL) {
-                printf("Cannot allocate memory\n");
-                return 1;
-            }
-            head->item = n;
-            head->next = NULL;
-            p = head;
-        }
-        else {
-            p->next = malloc(sizeof(ListNode));
-            if (p->next == NULL) {
-                printf("Cannot allocate memory\n");
-                return 1;
-            }
-            p = p->next;
-            p->item = n;
-            p->next = NULL;
-        }
+	// Question 2
+	//Write your program code here
+	scanf("%d", &n);
+	while (n != -1) {
+		if (head == NULL) {
+			head = malloc(sizeof(ListNode));
+			if (head == NULL) {
+				printf("Cannot allocate memory\n");
+				return 1;
+			}
+			head->item = n;
+			head->next = NULL;
+			p = head;
+		}
+		else {
+			p->next = malloc(sizeof(ListNode));
+			if (p->next == NULL) {
+				printf("Cannot allocate memory\n");
+				return 1;
+			}
+			p = p->next;
+			p->item = n;
+			p->next = NULL;
+		}
 
-        scanf("%d", &n);
-    }
+		scanf("%d", &n);
+	}
 
-    printf("Current list: ");
-    temp = head;
-    while (temp->next != NULL) {
-        printf("%d ", temp->item);
-        temp = temp->next;
-    }
-    printf("%d ", p->item);
-    printf("\n");
+	printf("Current list: ");
+	temp = head;
+	while (temp != NULL) {
+		printf("%d ", temp->item);
+		temp = temp->next;
+	}
+	printf("\n");
 
 //////////////////////////////////////////////////////////////////////
 
@@ -89,21 +88,27 @@ int main()
 */
 
 
-    // Question 4
+	// Question 4
 	//rewrite the free up using temporary pointer temp.
 	temp = head;
-	while (temp != NULL) {
-	    temp = head;
-        while (temp->next != p && temp->next != NULL) {
-            temp = temp->next;
-        }
-        free(p);
-        temp->next = NULL;
-        p = temp;
+	while (temp != NULL && p != head) {
+		temp = head;
+		if (p == head) {    // last = first == only 1 item in linked list
+			free(p);
+			break;
+		}
+		else {  // more than 1 item in the linked list
+			while (temp->next != p) {
+				temp = temp->next;
+			}
+			free(p);
+			temp->next = NULL;
+			p = temp;
+		}
 	}
 
 /////////////////////////////////////////////////////////
-    return 0;
+	return 0;
 }
 
 ////////////////////////////////////////////////////////////
@@ -113,24 +118,22 @@ int searchList(ListNode *head, int value)
 
 ////////////////////////////////////////////////////////////////////
 
- // Question 3
- //Write your program code here
-    int i, found;
+	// Question 3
+	//Write your program code here
+	int i;
 
-    i = found = 0;
-    while (head != NULL) {
-        if (head->item == value) {
-            found = 1;
-            break;
-        }
-
-        i++;
-        head = head->next;
-    }
-    if (!found) {
-        i = -1;
-    }
-    return i;
+	i = 0;
+	while (head != NULL) {
+		if (head->item == value) {
+			break;
+		}
+		i++;
+		head = head->next;
+	}
+	if (head == NULL) {
+		i = -1;
+	}
+	return i;
 
 //////////////////////////////////////////////////////////////////////
 }
