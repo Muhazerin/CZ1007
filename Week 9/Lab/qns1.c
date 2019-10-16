@@ -58,7 +58,7 @@ void removes(char *s, int n)
 	for (i=0; i < n; i++) {
 		*(s+i) = *(s+i+1);
 	}
-	printf("Resulting string: %s", s);
+	printf("Resulting string: %s\n", s);
 }
 
 //////////////////////////////////////////
