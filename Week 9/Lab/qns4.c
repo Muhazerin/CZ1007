@@ -22,7 +22,7 @@ int searchList(ListNode *head, int value);
 int main()
 {
 	ListNode *head, *p, *temp;
-	int n, i;
+	int n;
 
 
 	head=NULL;
@@ -71,8 +71,7 @@ int main()
 
 	printf("Enter value to search for:");
 	scanf("%d", &n);
-	i = searchList(head,n);
-	printf("Value %d found at index %d", n, i);
+	searchList(head,n);
 
 /////////////////////////////////////////////////////////
 
@@ -123,15 +122,14 @@ int searchList(ListNode *head, int value)
 	i = 0;
 	while (head != NULL) {
 		if (head->item == value) {
-			break;
+			printf("Value %d found at index %d\n", value, i);
+			return i;
 		}
 		i++;
 		head = head->next;
 	}
-	if (head == NULL) {
-		i = -1;
-	}
-	return i;
+	printf("Value %d can not be found\n", value);
+	return -1;
 
 //////////////////////////////////////////////////////////////////////
 }
