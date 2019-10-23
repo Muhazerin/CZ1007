@@ -247,7 +247,9 @@ int split(ListNode *head, ListNode **ptrEvenList, ListNode **ptrOddList)
         }
         index++;
         head = head->next;
+	return 0;
     }
+    return -1;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
