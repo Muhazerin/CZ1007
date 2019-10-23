@@ -233,10 +233,14 @@ int split(ListNode *head, ListNode **ptrEvenList, ListNode **ptrOddList)
 int duplicateReverse(ListNode *head, ListNode **ptrNewHead)
 {
 	// write your code here
-    while (head != NULL) {
-        insertNode(ptrNewHead, 0, head->num);
-        head = head->next;
-    }
+	if (head != NULL) {	// if list is not empty
+		while (head != NULL) {
+			insertNode(ptrNewHead, 0, head->num);
+			head = head->next;
+		}
+		return 0;
+	}
+	return -1;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
