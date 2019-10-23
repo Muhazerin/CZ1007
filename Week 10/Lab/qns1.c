@@ -162,7 +162,7 @@ int removeNode(ListNode **ptrHead, int index)
             return 0;
         }
         else {  // remove N-th item
-            while (cur != NULL) {
+            /*while (cur != NULL) {	// this algorithm also works
                 if (index == 0) {
                     pre->next = cur->next;
                     free(cur);
@@ -171,7 +171,19 @@ int removeNode(ListNode **ptrHead, int index)
                 index--;
                 pre = cur;
                 cur = cur->next;
-            }
+            }*/
+	    // tutor's algorithm
+	    // find the node before and after the target position
+	    // free the target node and reconnect the links
+	    if ( (pre = findNode(*ptrHead, index - 1)) != NULL) {
+		    if (pre->next == NULL) {
+			    return -1;
+		    }
+		    cur = pre->next;
+		    pre->next = cur->next;
+		    free(cur);
+		    return 0;
+	    }
         }
     }
     return -1;
