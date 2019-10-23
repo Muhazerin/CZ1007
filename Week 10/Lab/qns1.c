@@ -204,7 +204,7 @@ int removeNode2(LinkedList *ll, int index)
             return 0;
         }
         else {  // remove N-th item
-            while (cur != NULL) {
+            /*while (cur != NULL) {
                 if (index == 0) {
                     pre->next = cur->next;
                     free(cur);
@@ -214,7 +214,17 @@ int removeNode2(LinkedList *ll, int index)
                 index--;
                 pre = cur;
                 cur = cur->next;
-            }
+            }*/
+	    if ((pre = findNode(ll->head, index-1)) != NULL) {
+		    if (pre->next == NULL) {
+			    return -1;	
+		    }
+		    cur = pre->next;
+		    pre->next = cur->next;
+		    free(cur);
+		    (ll->size)--;
+		     return 0;
+	    }
         }
     }
     return -1;
