@@ -93,18 +93,18 @@ int main()
 	for (i = 0; i<10; i++)
 		enqueue(&q, i);
 
-    	puts("The current queue: ");
+	puts("The current queue: ");
 	printList(q.ll.head);
 	recursiveReverse(&q);
-    	puts("The updated queue after recursiveReverse(&q): ");
+	puts("The updated queue after recursiveReverse(&q): ");
 	printList(q.ll.head);
-    	printf("\n");
+	printf("\n");
 
 	//for question 3
 	result = palindrome(word1); //*word1="A man a plan a canal Panama";
-    	printf("The palindrome result of first word is %d\n", result);
+	printf("The palindrome result of first word is %d\n", result);
 	result = palindrome(word2);// *word2="Superman in the sky";
-    	printf("The palindrome result of second word is %d\n\n", result);
+	printf("The palindrome result of second word is %d\n\n", result);
 
 
 	//for question 4
@@ -132,16 +132,14 @@ int main()
 
 void removeUntil(Stack *s, int value) {
 	// write your code here
-    if (s->ll.head != NULL) {   // if the stack is not empty
-        while (s->ll.head != NULL) {
-            if (value != peek(s)) {
-                pop(s);
-            }
-            else {
-                break;
-            }
-        }
-    }
+	while (s->ll.head != NULL) {	// if the stack is not empty
+	    if (value != peek(s)) {
+			pop(s);
+	    }
+	    else {
+			break;
+	    }
+	}
 }
 
 //////////////////////////////////////////////////////////// 
