@@ -233,7 +233,7 @@ int balanced(char *expression) {
         }
         else if ((*expression == ')') ||  (*expression == '}') || (*expression == ']')) {
             if (*expression == ')') {
-                if (peek(&tempS) == '(') {
+                if (peek(&tempS) == '(' || isEmptyStack(&tempS)) {
                     pop(&tempS);
                 }
                 else {
@@ -241,8 +241,8 @@ int balanced(char *expression) {
                     break;
                 }
             }
-            else if (*expression == '}') {
-                if (peek(&tempS) == '{') {
+            else if (*expression == '}' || isEmptyStack(&tempS)) {
+                if (peek(&tempS) == '{' || isEmptyStack(&tempS)) {
                     pop(&tempS);
                 }
                 else {
@@ -262,6 +262,15 @@ int balanced(char *expression) {
         }
         expression++;
     }
+	
+	// lastly, need to check whether the stack is empty
+	// if not, it is not balanced
+	if (isEmptyStack(&s)) {
+		result = 0;
+	}
+	else {
+		result = 1;
+	}
 
     return result;
 }
