@@ -146,6 +146,7 @@ void removeUntil(Stack *s, int value) {
 //Question 2 
 
 void recursiveReverse(Queue *q) {
+	/*
 	// write your code here
     Queue *temp;
     int tempInt;
@@ -161,7 +162,15 @@ void recursiveReverse(Queue *q) {
         tempInt = dequeue(temp);
         recursiveReverse(temp);
         enqueue(temp, tempInt);
-    }
+    }*/
+	int i;
+	
+	if (isEmptyQueue(q))
+		return;
+	
+	i = dequeue(q);
+	recursiveReverse(q);
+	enqueue(q, i);
 }
 
 //////////////////////////////////////////////////////////// 
