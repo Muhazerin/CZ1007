@@ -110,7 +110,7 @@ void printBSTInOrder(BTNode *node)
 int isBST(BTNode *node, int min, int max) // the item stored in node has to be smaller than max and larger than min
 {
 	// write your code here
-	if (node == NULL) {     // if the tree is empty
+	/*if (node == NULL) {     // if the tree is empty
         return 0;
 	}
 	else {
@@ -136,7 +136,15 @@ int isBST(BTNode *node, int min, int max) // the item stored in node has to be s
         }
         // if the code reach here, it mean it has reached the leaf child
         return 1;
+	} */
+	if (node == NULL) {
+		return 1;	
 	}
+	if (node->item >= max || node->item <= min) {	// node should be in between min and max
+		return 0;	
+	}
+	
+	return isBst(node->left, min, node->item) && isBst(node->right, node->item, max);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
